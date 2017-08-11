@@ -32,57 +32,84 @@ After the installation process is completed, open Kickstart Configuration using 
 ```
 in terminal.
 When the Kickstart opens, choose the settings you need for your installation. Here is the configuration used.
+<p align="center"> 
+<img src="doc/kickstart-0.png" width="550">
+</p>
 
-![alt text](doc/kickstart-0.png "Logo Title Text 0")
 Very basic and self explanatory settings here. We have used x86 architecture, because our devices had less than 4 GB of RAM. 
 
+<p align="center"> 
+<img src="doc/kickstart-1.png" width="550">
+</p>
 
-![alt text](doc/kickstart-1.png "Logo Title Text 1")
 If you want to install Ubuntu from CD-ROM or USB like we did, choose CD-ROM. If you want to install it from ISO file stored on FTP, HTTP servers or hard drive, choose appropriate options. 
 
+<p align="center"> 
+<img src="doc/kickstart-2.png" width="550">
+</p>
 
-![alt text](doc/kickstart-2.png "Logo Title Text 2")
 Keep boot loader options to default.
 
+<p align="center"> 
+<img src="doc/kickstart-3.png" width="550">
+</p>
 
-![alt text](doc/kickstart-3.png "Logo Title Text 3")
 Be careful on this step and set the right partitioning information, because it can completely delete your current system. We have installed Ubuntu on machines that had the same size HDDs with existing partitions. 
 
 Make sure to create /boot, / ,and swap partitions. In this example the first two partitions are in fixed size and the last one is set to fill all remaining space for swap .
 
 Note:  We make some small changes in the partition information in the further settings of kick-start file.
 
+<p align="center"> 
+<img src="doc/kickstart-4.png" width="550">
+</p>
 
-![alt text](doc/kickstart-4.png "Logo Title Text 4")
 Choose Static or DHCP. 
 
+<p align="center"> 
+<img src="doc/kickstart-5.png" width="550">
+</p>
 
-![alt text](doc/kickstart-5.png "Logo Title Text 5")
 Kept the default settings. 
 
+<p align="center"> 
+<img src="doc/kickstart-6.png" width="550">
+</p>
 
-![alt text](doc/kickstart-6.png "Logo Title Text 6")
 Enter your credentials. You can later change the password in ks.cfg file manually. If you chose to encrypt your password, the supported hash in Kickstart configuration is MD5. Use Open SSL command
 ```
 openssl passwd -1 yourpassword 
 ```
 in Terminal to generate the new password. Place the generated new password in the place of Password and Confirm Password.
 
-![alt text](doc/kickstart-7.png "Logo Title Text 7")
+<p align="center"> 
+<img src="doc/kickstart-7.png" width="550">
+</p>
+
 Keep it disabled. Ubuntu doesn't support firewall settings. 
 
+<p align="center"> 
+<img src="doc/kickstart-8.png" width="550">
+</p>
 
-![alt text](doc/kickstart-8.png "Logo Title Text 8")
 Do not configure the X Window System here. Ubuntu automaticlly solves this one anyway.
 
+<p align="center"> 
+<img src="doc/kickstart-9.png" width="550">
+</p>
 
-![alt text](doc/kickstart-9.png "Logo Title Text 9")
 Ubuntu doesn't support Kickstart package selection. We will add them manually %packages section in ks.cfg file.
 
-![alt text](doc/kickstart-10.png "Logo Title Text 10")
+<p align="center"> 
+<img src="doc/kickstart-10.png" width="550">
+</p>
+
 We have some specific per-installation script, we will add manually in %pre section in ks.cfg file.
 
-![alt text](doc/kickstart-11.png "Logo Title Text 11")
+<p align="center"> 
+<img src="doc/kickstart-11.png" width="550">
+</p>
+
 We have some specific post-installation script, we will add manually in %post section in ks.cfg file.
 
 
